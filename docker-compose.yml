@@ -1,0 +1,30 @@
+version: '3.1'
+services:
+  orderservice:
+    network_mode: bridge
+    container_name: orderservice
+    image: mpinchuk/orderservice:latest
+    build: ./
+    ports:
+      - "8084:8084"
+    environment:
+      - POSTGRES_PASSWORD=4526357
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=orderservice
+      - DB_SERVER=postgresqldb-order
+    links:
+      - postgresqldb-order
+
+  postgresqldb-order:
+    network_mode: bridge
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=4526357
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=orderservice
+    volumes:
+      - postgres-data-order: D:\Max\projects\A3\volumes\order
+volumes:
+  postgres-data-order:

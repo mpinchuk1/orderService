@@ -915,6 +915,7 @@ true posixrules
     </table>
     <table id="27" parent="14" name="orders">
       <ObjectId>52148</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>23301</StateNumber>
     </table>

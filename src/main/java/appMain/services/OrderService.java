@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @Service
 public class OrderService {
 
-    private static final String COURIER_URL = "http://localhost:8082";
+    private static final String COURIER_URL = "http://courierservice:8082";
     private final RestTemplate restTemplate = new RestTemplate();
     private final HttpHeaders headers = new HttpHeaders();
     private final HttpEntity<Object> headersEntity = new HttpEntity<>(headers);

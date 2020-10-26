@@ -1,11 +1,9 @@
 package appMain.entities;
 
-import appMain.entities.dto.ProductDTO;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.sql.Date;
 import java.util.UUID;
 
 @Entity
@@ -18,9 +16,8 @@ public class Order {
     @JoinColumn(name = "seller_id")
     private Seller seller;
     private UUID customerId;
+    @JsonFormat(pattern = "MMM dd, yyyy")
     private Date orderDate;
-    @Transient
-    private final Calendar c = Calendar.getInstance();
 
     public Order() {
     }
@@ -30,7 +27,7 @@ public class Order {
         this.seller = seller;
         this.customerId = customerId;
         this.price = price;
-        this.orderDate = c.getTime();
+        this.orderDate = new Date(System.currentTimeMillis());
     }
 
     public UUID getId() {

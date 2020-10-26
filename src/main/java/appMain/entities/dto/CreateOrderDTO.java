@@ -3,7 +3,6 @@ package appMain.entities.dto;
 import appMain.entities.Seller;
 
 import java.util.List;
-import java.util.UUID;
 
 public class CreateOrderDTO {
     private Seller seller;
