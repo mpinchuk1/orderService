@@ -1,10 +1,6 @@
 package appMain.entities;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.UUID;
 
@@ -15,7 +11,12 @@ public class Seller {
     private String firstName;
     private String lastName;
 
-    public Seller(){
+    public Seller() {
+    }
+
+    public Seller(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Seller(UUID id, String firstName, String lastName) {

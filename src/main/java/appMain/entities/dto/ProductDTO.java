@@ -12,8 +12,7 @@ public class ProductDTO {
     public ProductDTO() {
     }
 
-    public ProductDTO(UUID productId, String name, double price, boolean isForAdult, int quantity) {
-        this.productId = productId;
+    public ProductDTO(String name, double price, boolean isForAdult, int quantity) {
         this.name = name;
         this.price = price;
         this.isForAdult = isForAdult;
